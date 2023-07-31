@@ -1,2 +1,2 @@
-# POMADORO TEMÁTICO DE ONE PIECE
+# POMODORO TEMÁTICO DE ONE PIECE
 <img src= "img/landpage.png"/>
