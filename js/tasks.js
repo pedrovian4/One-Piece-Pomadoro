@@ -1,16 +1,20 @@
 // this logic implements the check box of a task
 const taskCheckbox = document.querySelector('.task-done-checkbox');
 const  check = document.querySelector('.checked');
-const taskName = document.querySelector('.task-name');
-taskCheckbox.addEventListener('change', function(){
-    if (this.checked) {
-        console.log("Checkbox is checked..");
-        taskName.style.textDecoration="line-through";
-      } else {
-        console.log("Checkbox is not checked..");
-            taskName.style.textDecoration="none";
-      }
-    });
+const containerTasks = document.querySelector('.container-tasks');
+document.body.addEventListener('change', function(event){
+    if(event.target && event.target.classList.contains('task-done-checkbox') && event.target.closest('.task-box')){
+        const taskCheckbox = event.target;
+        const taskName = taskCheckbox.closest('.task-box').querySelector('.task-name'); 
+        if(taskCheckbox.checked) {
+            console.log("Checkbox is checked..");
+            taskName.style.textDecoration = "line-through";
+        } else {
+            console.log("Checkbox is not checked..");
+            taskName.style.textDecoration = "none";
+        }
+    }
+});
 // adding a  task
 
 const btnAdd= document.querySelector('.add-task');
@@ -53,17 +57,11 @@ function addTask(taskName){
     p.innerText= taskName;
     div4.appendChild(p);
 
-    let div5 = document.createElement('div');
-    div5.classList.add('task-done');
+    let div5 = document.createElement('input');
+    div5.setAttribute("type", "checkbox")
+    div5.classList.add('task-done-checkbox');
     div2.appendChild(div5); 
 
-    let inputCheckBox = document.createElement('input');
-    inputCheckBox.setAttribute('type', 'checkbox');
-    inputCheckBox.classList.add('task-done-checkbox');
-
-    div5.appendChild(inputCheckBox);
-
-    console.log(div1);
     document.body.appendChild(div1);
 
 }

@@ -157,22 +157,29 @@ body{
 .task-box{
     margin-top: 5px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    box-shadow:  2px 5px 0 0 rgba(0, 0, 0, 0.146);
-
+    box-shadow: 2px 5px 0 0 rgba(0, 0, 0, 0.146);
 }
+
+
 .icon-task-div img{
     width: 35px;
     margin-left: 10px;
 }
+
+
 .task-name-div{
-    margin-left: 25%;
+    flex-grow: 1; 
+    padding-left: 10px; 
 }
 
 .task-name{
- font-size: 24px;
- color: #ffffff8c;   
+    font-size: 24px;
+    color: #ffffff8c;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 }
 
 
@@ -181,7 +188,6 @@ body{
 }
 
 .task-done input{
-    margin-left: 30px;
     appearance: none;
     height: 25px;
     width: 25px;
@@ -203,3 +209,18 @@ body{
     background-color: #bf0e0e;
 }
 
+
+.task-done-checkbox {
+    appearance: none;
+    margin-right: 10%;
+    height: 25px;
+    width: 25px;
+    border-radius: 30% !important;
+    border: 1px solid transparent; 
+    color: #c847;
+    background-color: #f8df3c67;
+}
+
+.task-done-checkbox:checked {
+    background-color: #bf0e0e; 
+}
